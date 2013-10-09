@@ -202,4 +202,4 @@ $(OBJ_DIR)/fe/kernel/shim.o: $(SRC_DIR)/fe/kernel/shim.c
 $(OBJ_DIR)/fe/kernel/kernel.o: $(shell find $(SRC_DIR)/fe/kernel -name '*.rs') $(SRC_DIR)/fe/kernel/kernel.rc
 	@echo "[RUST] $@"
 	@mkdir -p ${@D}
-	$(RUSTC) $(RSFLAGS) --lib -c $(SRC_DIR)/fe/kernel/kernel.rc -o $@
+	@$(RUSTC) $(RSFLAGS) --lib -c $(SRC_DIR)/fe/kernel/kernel.rc -o $@
