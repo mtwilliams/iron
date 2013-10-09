@@ -26,7 +26,7 @@
 // DEALINGS IN THE SOFTWARE.
 
 //
-// zero.rs:
+// freestanding.rs:
 //
 // Minimal definitions of the core primitives in Rust. Include this file with
 // your project to create a freestanding Rust program that can run on bare
