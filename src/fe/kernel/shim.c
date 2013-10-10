@@ -9,7 +9,7 @@
 // See src/fe/kernel/main.rs.
 extern void fe_kernel_main(void);
 
-void fe_kernel_shim(unsigned long magic, unsigned long addr) {
+void fe_kernel_shim_entry(unsigned long magic, unsigned long addr) {
   // Check to make sure we're booted by a multiboot-compliant boot loader, if
   // not not we'll panic and halt (see src/fe/kernel/bootstrap.asm).
   if (magic != MULTIBOOT_BOOTLOADER_MAGIC)

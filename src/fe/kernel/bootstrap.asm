@@ -61,7 +61,7 @@ fe_kernel_shim_dealloc:
 ; ============================================================================ ;
 
 SECTION .text
-EXTERN fe_kernel_shim
+EXTERN fe_kernel_shim_entry
 GLOBAL fe_kernel_bootstrap
 fe_kernel_bootstrap:
 
@@ -70,7 +70,7 @@ fe_kernel_bootstrap:
 
   push ebx
   push eax
-  call fe_kernel_shim
+  call fe_kernel_shim_entry
 
   cli
   hlt
