@@ -9,8 +9,11 @@
 #[comment = "A microkernel built with Rust."];
 #[license = "BSD"];
 
+#[allow(ctypes)];
 #[no_std];
 #[no_core];
 
-mod freestanding;
+#[path = "../../../vendor/rust-core/core/mod.rs"]
+mod core;
+
 pub mod main;

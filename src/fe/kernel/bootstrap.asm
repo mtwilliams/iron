@@ -33,7 +33,7 @@ fe_bootstrapping_stack_btm:
 fe_bootstrapping_stack_top:
 
 ; ============================================================================ ;
-;  Stubs (see src/fe/kernel/zero.rs):                                          ;
+;  Shim (see vendor/rust-core/core/iron.rs):                                   ;
 ; ============================================================================ ;
 
 SECTION .text
@@ -45,16 +45,14 @@ GLOBAL __morestack
 __morestack:
 
 SECTION .text
-GLOBAL abort
-abort:
-GLOBAL memcmp
-memcmp:
-GLOBAL memcpy
-memcpy:
-GLOBAL malloc
-malloc:
-GLOBAL free
-free:
+GLOBAL fe_kernel_shim_abort
+fe_kernel_shim_abort:
+GLOBAL fe_kernel_shim_alloc
+fe_kernel_shim_alloc:
+GLOBAL fe_kernel_shim_realloc
+fe_kernel_shim_realloc:
+GLOBAL fe_kernel_shim_dealloc
+fe_kernel_shim_dealloc:
   cli
   hlt
 
