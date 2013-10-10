@@ -1,10 +1,9 @@
 // Copyright 2013 (c) Michael Williams, All rights reserved.
 // The following code is licensed under the terms specified in LICENSE.md.
 
-fn announce() {
-}
+#ifndef _FE_TYPES_H_
+#define _FE_TYPES_H_
 
-#[no_mangle]
-pub fn fe_kernel_main() {
-  announce();
-}
+#define NULL (0)
+
+#endif /* _FE_TYPES_H_ */

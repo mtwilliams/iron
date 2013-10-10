@@ -45,14 +45,9 @@ GLOBAL __morestack
 __morestack:
 
 SECTION .text
-GLOBAL fe_kernel_shim_abort
-fe_kernel_shim_abort:
-GLOBAL fe_kernel_shim_alloc
-fe_kernel_shim_alloc:
-GLOBAL fe_kernel_shim_realloc
-fe_kernel_shim_realloc:
-GLOBAL fe_kernel_shim_dealloc
-fe_kernel_shim_dealloc:
+GLOBAL fe_kernel_halt
+fe_kernel_halt:
+
   cli
   hlt
 
@@ -72,5 +67,4 @@ fe_kernel_bootstrap:
   push eax
   call fe_kernel_shim_entry
 
-  cli
-  hlt
+  jmp fe_kernel_halt
