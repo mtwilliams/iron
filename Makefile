@@ -202,7 +202,7 @@ $(OBJ_DIR)/fe/kernel/shim.o: $(SRC_DIR)/fe/kernel/shim.c
 SOURCES := $(shell find vendor/rust-core/core -name '*.rs')
 SOURCES += $(shell find $(SRC_DIR)/fe/kernel -name '*.rs')
 
-$(OBJ_DIR)/fe/kernel/kernel.o: $(SOURCES) $(SRC_DIR)/fe/kernel/kernel.rc
+$(OBJ_DIR)/fe/kernel/kernel.o: $(SOURCES)
 	@echo "[RUST] $@"
 	@mkdir -p ${@D}
-	@$(RUSTC) $(RSFLAGS) --lib -c $(SRC_DIR)/fe/kernel/kernel.rc -o $@
+	@$(RUSTC) $(RSFLAGS) --lib -c $(SRC_DIR)/fe/kernel/kernel.rs -o $@
